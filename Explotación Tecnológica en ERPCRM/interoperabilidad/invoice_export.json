@@ -1,0 +1,53 @@
+[
+  {
+    "invoice_id": 4829,
+    "invoice_number": "INV/2026/00142",
+    "issue_date": "2026-05-21",
+    "due_date": "2026-06-21",
+    "currency": "EUR",
+    "state": "posted",
+    "company": {
+      "name": "WillmanTech S.L.",
+      "tax_id": "ESB12345678"
+    },
+    "customer": {
+      "customer_id": 9051,
+      "legal_name": "Sistemas Globales S.A.",
+      "tax_id": "ESA87654321",
+      "email": "facturacion@sisglobal.com",
+      "address": {
+        "street": "Avenida del Progreso 12, Planta 3",
+        "city": "Barcelona",
+        "postal_code": "08002",
+        "country_code": "ES"
+      }
+    },
+    "invoice_lines": [
+      {
+        "line_id": 1,
+        "product_id": 104,
+        "description": "Consultoría e Integración Cloud (Por horas)",
+        "quantity": 15.00,
+        "price_unit": 85.00,
+        "discount_percentage": 0.00,
+        "tax_percentage": 21.00,
+        "subtotal": 1275.00
+      },
+      {
+        "line_id": 2,
+        "product_id": 215,
+        "description": "Licencia Anual Plataforma SaaS WillmanCore",
+        "quantity": 1.00,
+        "price_unit": 1200.00,
+        "discount_percentage": 10.00,
+        "tax_percentage": 21.00,
+        "subtotal": 1080.00
+      }
+    ],
+    "financial_summary": {
+      "tax_base_amount": 2355.00,
+      "tax_amount": 494.55,
+      "grand_total": 2849.55
+    }
+  }
+]

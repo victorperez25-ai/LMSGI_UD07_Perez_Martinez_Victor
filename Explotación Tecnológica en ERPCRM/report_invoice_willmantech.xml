@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_willmantech">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Factura: <span t-field="doc.name"/></h2>
+                        <p>Fecha de emisión: <span t-field="doc.date"/></p>
+                        
+                        <t t-set="has_discount" t-value="any(line.discount for line in doc.invoice_line_ids)"/>
+                        
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <t t-if="has_discount">
+                                        <th>Descuento (%)</th>
+                                    </t>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.invoice_line_ids" t-as="line">
+                                    <td><span t-field="line.name"/></td>
+                                    <td><span t-field="line.quantity"/></td>
+                                    <td><span t-field="line.price_unit"/></td>
+                                    <t t-if="has_discount">
+                                        <td><span t-field="line.discount"/></td>
+                                    </t>
+                                    <td><span t-field="line.price_subtotal"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="text-right">
+                            <p><strong>Total Neto: </strong><span t-field="doc.amount_total"/></p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
